@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Shopping Site</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script src="./scripts.js"></script>
+    <div>
+      <h1 class="myH1">E - Shopping Site</h1>
+      <p id="userGreeting"></p>
+      <div style="margin: 50px auto; text-align: center">
+        <label for="Category" style="font-size: 1.3rem"
+          >Choose a category:</label
+        >
+        <select
+          name="Category"
+          id="categories"
+          onchange="onCategoryChange(this)"
+        ></select>
+      </div>
+    </div>
+    <div id="products" class="products-container"></div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: lightblue;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  margin: 150px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#checkoutForm {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-purchase-cont {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#checkoutForm input,
+button {
+  margin-top: 20px;
+}
+
+#checkoutForm label {
+  display: inline-block;
+  margin-left: 50px;
+  width: 105px;
+}
+
+#loginForm input,
+button {
+  margin-top: 30px;
+}
+
+input[type="text"] {
+  margin-left: 10px;
+}
+
+input[type="password"] {
+  margin-left: 13px;
+}
+
+h2 {
+  color: lightblue;
+}
+
+button {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightblue;
+  color: white;
+}
+
+.products-container {
+  margin: 20px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+  background-color: black; /* Div color */
+  border-radius: 5px;
+}
+
+.product-item {
+  flex: 1 1 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 350px;
+  min-width: 150px;
+  background-color: white;
+  color: black;
+}
+
+.bill-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 350px;
+  min-width: 150px;
+  background-color: white;
+  color: black;
+  margin: 50px auto 0 auto;
+}
+
+.product-item img,
+.bill-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  height: 350px;
+}
+
+.product-item h3,
+.bill-item h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.product-item p,
+.bill-item p {
+  margin: 5px 0;
+}
+
+.product-item input {
+  width: 50px;
+  font-size: 1rem;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+.product-item button,
+.bill-item button {
+  background-color: black;
+  color: white;
+}
+
+.product-item button:hover,
+.bill-item button:hover {
+  background-color: lightblue;
+}
+
+.myH1 {
+  background-color: black;
+  color: lightblue;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+#categories {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-left: 20px;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: "1288906482283860",
+                xfbml: true,
+                version: "v17.0",
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "facebook-jssdk");
+
+        FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+        function facebookLogin() {
+            FB.login(
+                function (response) {
+                    if (response.authResponse) {
+                        FB.api("/me", { fields: "name,email" }, function (userInfo) {
+                            // Store user data in localStorage
+                            localStorage.setItem("fbUser", JSON.stringify(userInfo));
+                            // Redirect to main page after successful login
+                            window.location.href = "main.html";
+                        });
+                    } else {
+                        console.log("User cancelled login or did not fully authorize.");
+                        alert("Login failed! Please try again.");
+                    }
+                },
+                { scope: "public_profile,email" }
+            );
+        }
+
+        // Prevent default form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            // You might want to handle your own authentication here
+            alert("Standard login is not implemented yet.");
+        }
+        function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+        </script>
+    </head>
+    <body>
+        <h1 class="myH1">Login</h1>
+        <div class="login-container">
+            <form id="loginForm" onsubmit="handleFormSubmit(event)">
+                <h2>Login</h2>
+                <hr>
+                <label for="username">Username:</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                >
+                <br>
+                <label for="password">Password:</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                >
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            <a href="https://www.freeprivacypolicy.com/live/f9ceb587-7d00-4c39-9a46-cfcdc41212e8">Our privacypolicy</a>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>
